@@ -1,0 +1,61 @@
+@mixin centered-80 {
+ 	width: 80%;
+	margin: 0 auto;
+	padding: 20px;
+ }
+
+// general layout
+
+ body {
+	font-family: 'Century Gothic';
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+header {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 10px;
+	h1 {
+		font-size: 40px;
+	}
+	ul{
+		padding-left: 0px;
+		list-style: none;
+		width: 90%;
+		margin: 0 auto;
+		border-bottom: 1px solid rgba(0, 186, 159, 1);
+	}
+	li{
+		width: 10%;
+		/*	margin: 20px;*/
+		display: inline-block;
+		/*background-color: rgba(0, 186, 159, 0.5);*/
+		padding: 10px;
+		border-radius: 10px;
+	}
+}
+
+// index
+
+.post-index {
+	@include centered-80;
+}
+
+// user-form
+
+.user-form {
+	@include centered-80;
+	text-align: center;
+	h2{
+		text-align: center;
+	}
+}
+
+.log-in{
+	color: red;
+}
