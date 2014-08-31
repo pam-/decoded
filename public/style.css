@@ -31,3 +31,8 @@ header li{
 	border-radius: 10px;
 }
 
+.post-index {
+	width: 80%;
+	float: left;
+	
+}

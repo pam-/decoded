@@ -1,0 +1,6 @@
+
+<%= @post.title %>
+<%= @post.body %> 
+<% unless current_user %>
+<%= @post.user.name %>
+<% end %> 

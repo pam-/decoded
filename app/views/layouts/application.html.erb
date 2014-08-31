@@ -8,17 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header> 
-	<h1> TRASHED </h1>
-	<ul>
+	<%= render 'layouts/header' %>
 
-		<li>Home</li>
-		<li> About </li>
-		<li> Our Authors </li>
+	<%= yield %> 
 
-	</ul>
-</header>
+	<%#= render 'footer' %>
 
-<%= yield %> 
 </body>
 </html>

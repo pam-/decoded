@@ -1,16 +1,17 @@
 <%#= if user_signed_in? %> 
 
-<section class="container">
-  <div class="article">
-      <div class="article_head">
-          <h3>I like us better when we're wasted!</h3><h3>8/12/14</h3>
-      </div>
-      <div class="article_body">
-			</div>
+<section class="post-index">
+    <h3> 
+    	<% @posts.each do |post| %>
+    	<%= post.title %> <small> <%= post.created_at %> </small>
+    </h3> 
+    <p> 
+    	<%= truncate(post.body, length: 300) %> 
+    </p>
+    <% end %>
   </div>
 </section>
 
 <aside> 
-	<h3> pop posts </h3>
-	<h3> Feeling lucky </h3>
+
 </aside>

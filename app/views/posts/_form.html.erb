@@ -1,0 +1,12 @@
+<%= form_for @post do |post| %> 
+	<% if @post.errors.any? %>
+	<ul> 
+		<% post.errors.full_messages.each do |message| %> 
+		<li> <%= message %> </li>
+		<% end %>
+	</ul>
+	<% end %> 
+	<%= post.text_field :title, placeholder: 'Enter Title' %>
+	<%= post.text_area :body, placeholder: 'Blog Away!' %> 
+	<%= post.submit 'Post' %> 
+<% end %> 
