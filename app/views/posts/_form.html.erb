@@ -1,12 +1,21 @@
+
 <%= form_for @post do |post| %> 
 	<% if @post.errors.any? %>
-	<ul> 
-		<% post.errors.full_messages.each do |message| %> 
-		<li> <%= message %> </li>
-		<% end %>
-	</ul>
-	<% end %> 
-	<%= post.text_field :title, placeholder: 'Enter Title' %>
-	<%= post.text_area :body, placeholder: 'Blog Away!' %> 
-	<%= post.submit 'Post' %> 
+	<div>
+		<ul> 
+			<% post.errors.full_messages.each do |message| %> 
+			<li> <%= message %> </li>
+			<% end %>
+		</ul>
+		</div>
+		<% end %> 
+	<div>
+		<%= post.text_field :title, placeholder: 'Enter Title' %> 
+	</div>
+	<div>
+		<%= post.text_area :body, placeholder: 'Blog Away!' %> 
+	</div>
+	<div>
+		<%= post.submit 'Post' %> 
+	</div>
 <% end %> 

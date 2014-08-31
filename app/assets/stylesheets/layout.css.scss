@@ -1,7 +1,16 @@
-@mixin centered-80 {
- 	width: 80%;
+@mixin width-80 {
+	 width: 80%;
 	margin: 0 auto;
 	padding: 20px;
+}
+
+@mixin centered-80 {
+	@include width-80;
+	text-align: center;
+ }
+
+ @mixin left-80 {
+ 	@include width-80;
  }
 
  $accent: rgba(0, 186, 159, 1);
@@ -53,7 +62,6 @@ header {
 
 .user-form {
 	@include centered-80;
-	text-align: center;
 	h2{
 		text-align: center;
 		letter-spacing: 2px;
@@ -79,5 +87,20 @@ header {
 		border: 1px solid $accent;
 		padding: 10px;
 		margin: 20px;
+	}
+}
+
+// post form
+
+.post-form{
+	@include left-80;
+	h2,
+	input[type="text"],
+	textarea{
+		margin: 10px;
+		width: 60%;
+	}
+	textarea{
+		height: 200px;
 	}
 }
