@@ -4,10 +4,13 @@
 	padding: 20px;
  }
 
+ $accent: rgba(0, 186, 159, 1);
+
 // general layout
 
  body {
 	font-family: 'Century Gothic';
+	padding: 20px;
 }
 
 a{
@@ -28,7 +31,7 @@ header {
 		list-style: none;
 		width: 90%;
 		margin: 0 auto;
-		border-bottom: 1px solid rgba(0, 186, 159, 1);
+		border-bottom: 1px solid $accent;
 	}
 	li{
 		width: 10%;
@@ -53,5 +56,28 @@ header {
 	text-align: center;
 	h2{
 		text-align: center;
+		letter-spacing: 2px;
+		margin: 20px;
+	}
+	label{
+		font-size: 20px;
+	}
+	label[for="user_remember_me"]{
+		font-size: 15px;
+	}
+	input[type="submit"],
+	input[type="email"],
+	input[type="password"]{
+		margin: 10px;
+		padding: 10px;
+		text-align: center;
+		width: 30%;
+	}
+	input[type="submit"]{
+		border-radius: 10px;
+		background-color: #fff;
+		border: 1px solid $accent;
+		padding: 10px;
+		margin: 20px;
 	}
 }
