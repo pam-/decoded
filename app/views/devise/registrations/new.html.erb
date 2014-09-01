@@ -9,6 +9,11 @@
   	<%= f.file_field :avatar %>
   </div>
 
+   <div> 
+    <%= f.label :name, 'Change username' %>
+    <%= f.file_field :name %>
+  </div>
+
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
 
