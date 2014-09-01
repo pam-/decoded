@@ -5,13 +5,13 @@
   <%= devise_error_messages! %>
 
    <div> 
-    <%= f.label :name, 'Enter username' %>
-    <%= f.file_field :name %>
+    <%= f.label :avatar, 'Change profile picture' %> <br>
+    <%= f.file_field :avatar %>
   </div>
 
-   <div> 
-    <%= f.label :avatar, 'Change profile picture' %>
-    <%= f.file_field :avatar %>
+  <div> 
+    <%= f.label :name, 'Enter username' %> <br>
+    <%= f.text_field :name %>
   </div>
 
   <div><%= f.label :email %><br />

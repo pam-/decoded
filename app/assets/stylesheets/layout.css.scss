@@ -199,7 +199,12 @@ header {
 	label[for="user_remember_me"]{
 		font-size: 15px;
 	}
+	input[type="file"]{
+		margin: 20px;
+		padding-left: 90px;
+	}
 	input[type="submit"],
+	input[type="text"],
 	input[type="email"],
 	input[type="password"]{
 		margin: 10px;
@@ -272,6 +277,9 @@ header {
 				margin: 10px;
 			}
 		}
+		img{
+			border-radius: 100px;
+		}
 	}
 }
 
@@ -289,6 +297,15 @@ header {
 		h3{
 			font-weight: lighter;
 		}
+		p:first-letter{
+			line-height: 1;
+			color: $accent;
+			font-size: 70px;
+			padding-right: 10px;padding-left: 15px;
+			padding-bottom: 0;
+			font-weight: bolder;
+			float: left;
+		}
 		p{
 			line-height: 2;
 		}
@@ -301,6 +318,15 @@ header {
 		a:hover{
 			color: $accent;
 		}
+		img{
+			border-radius: 100px;
+		}
+		a{
+		background-color: $accent;
+		}
+		a:hover{
+			color: $accent;
+		}
 	}
 }
 
@@ -308,7 +334,7 @@ header {
 
 footer{
 	@include centered-80;
-	margin-top: 50px;
+	margin-top: 20px;
 	clear: both;
 	p{
 		font-size: 15px;

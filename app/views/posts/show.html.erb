@@ -8,8 +8,7 @@
 	<aside> 
 		
 		<%= image_tag @post.user.avatar(:thumb) %> 
-		<p> username </p>
-		<div> <p> bio </p> </div>
+		<p> <%= link_to @post.user.name, user_path(@post.user.id) %> </p>
 		<% unless current_user == @post.user %>
 			<div>
 				<p> <%= link_to 'visit profile', user_path(@post.user) %> </p>
