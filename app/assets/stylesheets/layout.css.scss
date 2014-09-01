@@ -16,11 +16,18 @@ $accent: rgba(0, 186, 159, 0.3);
  }
 
  @mixin submit-button{
- 		border-radius: 10px;
-		background-color: #fff;
-		border: 1px solid $accent;
-		padding: 10px;
-		margin: 20px;
+	border-radius: 10px;
+	background-color: #fff;
+	border: 1px solid $accent;
+	padding: 10px;
+	margin: 20px;
+ }
+
+ @mixin side-bar{
+	width: 20%;
+	padding-top: 20px; padding-bottom: 20px;
+	border: 1px solid $accent;
+	text-align: center;
  }
 
 // general layout
@@ -133,6 +140,14 @@ header {
 .post-index {
 	@include centered-80;
 	text-align: left;
+	.post{
+		border: 1px solid $accent;
+		padding-left: 10px; padding-right: 10px;
+		margin-bottom: 20px; 
+		a{
+			background-color: $accent;
+		}
+	}
 	h3{
 		font-weight: lighter;
 		font-size: 35px;
@@ -155,6 +170,17 @@ header {
 	}
 	a:hover{
 		color: $accent;
+	}
+}
+
+// about 
+
+.about{
+	@include centered-80;
+	h2{
+		background-color: $accent;
+		line-height:2;
+		font-weight: lighter;
 	}
 }
 
@@ -211,8 +237,8 @@ header {
 // user page
 
 .user-page{
-	@include centered-80;
-	text-align: left;
+	@include width-80;
+	/*padding-bottom: 20px;*/
 	div{
 		float: left;
 		width: 60%;
@@ -220,20 +246,25 @@ header {
 	h3{
 		letter-spacing: 1.2px;
 		font-weight: lighter;
+		margin-top: 40px;
 	}
 	p{
 		line-height: 2;
+		border-bottom: 1px solid $accent;
+		span{
+			display: block;
+		}
+	}
+	a{
+		background-color: $accent;
 	}
 	a:hover{
 		color: $accent;
 	}
 	aside{
+		@include side-bar;
 		top: 140px; right: 120px;
 		position: fixed;
-		width: 20%;
-		padding-top: 20px; padding-bottom: 20px;
-		border: 1px solid $accent;
-		text-align: center;
 		ul{
 			list-style: none;
 			padding-left: 0;
@@ -242,4 +273,49 @@ header {
 			}
 		}
 	}
+}
+
+// single post page
+
+.post-show{
+	@include width-80;
+	.post{
+		float: left;
+		width: 70%;
+		h2{
+			letter-spacing: 1.2px;
+			margin-top: 10px;
+		}
+		h3{
+			font-weight: lighter;
+		}
+		p{
+			line-height: 2;
+		}
+	}
+	aside{
+		@include side-bar;
+		float: right;
+		padding-left: 10px;padding-right: 10px;
+		margin-top: 20px;
+		a:hover{
+			color: $accent;
+		}
+	}
+}
+
+// footer 
+
+footer{
+	@include centered-80;
+	margin-top: 50px;
+	clear: both;
+	p{
+		font-size: 15px;
+	}
+}
+footer:before,
+footer:after{
+	display: table;
+	content: " ";
 }
