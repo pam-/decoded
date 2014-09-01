@@ -1,5 +1,7 @@
+$accent: rgba(0, 186, 159, 0.3);
+
 @mixin width-80 {
-	 width: 80%;
+	width: 80%;
 	margin: 0 auto;
 	padding: 20px;
 }
@@ -13,13 +15,20 @@
  	@include width-80;
  }
 
- $accent: rgba(0, 186, 159, 1);
+ @mixin submit-button{
+ 		border-radius: 10px;
+		background-color: #fff;
+		border: 1px solid $accent;
+		padding: 10px;
+		margin: 20px;
+ }
 
 // general layout
 
  body {
 	font-family: 'Century Gothic';
-	padding: 20px;
+	/*background: $accent;*/
+	// padding: 20px;
 }
 
 a{
@@ -28,19 +37,21 @@ a{
 }
 
 header {
-	width: 100%;
-	margin: 0 auto;
+	@include centered-80;
 	text-align: center;
 	padding: 10px;
+	background: $accent;
+	-webkit-box-shadow: inset 0 0 1.2em $accent;
 	h1 {
 		font-size: 40px;
+		color: #fff;
 	}
 	ul{
 		padding-left: 0px;
 		list-style: none;
-		width: 90%;
+		width: 100%;
 		margin: 0 auto;
-		border-bottom: 1px solid $accent;
+		/*border-bottom: 1px solid $accent;*/
 	}
 	li{
 		width: 10%;
@@ -50,12 +61,101 @@ header {
 		padding: 10px;
 		border-radius: 10px;
 	}
+	li:hover{
+		color: $accent;
+	}
+}
+
+#white-cloud {
+	width: 160px; height: 50px;
+	
+	background-color: #fff;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	
+	position: relative;
+	margin: 60px auto 20px;
+	:after, 
+	:before {
+		content: '';
+		position: absolute;
+		background-color: #fff;
+	}
+	:after {
+		width: 90px; height: 100px;
+		top: -35px; left: 50px;
+		
+		border-radius: 100px;
+		-webkit-border-radius: 100px;
+		-moz-border-radius: 100px;
+	}
+	:before {
+		width: 80px; height: 80px;
+		top: -50px; right: 80px;
+		
+		border-radius: 200px;
+		-webkit-border-radius: 200px;
+		-moz-border-radius: 200px;
+	}
+}
+
+// small header
+
+.navbar{
+	@include centered-80;
+	padding: 10px;
+	background: $accent;
+	h2{
+		float: left;
+	}
+	ul{
+		float: right;
+		list-style: none;
+		padding-left: 0;
+	}
+	li{
+		display: inline-block;
+		margin: 10px;
+	}
+}
+
+.navbar:after{
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
 }
 
 // index
 
 .post-index {
 	@include centered-80;
+	text-align: left;
+	h3{
+		font-weight: lighter;
+		font-size: 35px;
+		letter-spacing: 1px;
+		margin: 0;
+	}
+	small,
+	h4{
+		font-size: 15px;
+		font-weight: lighter;
+		display: inline-block;
+	}
+	img {
+		margin-top: 50px;
+		border-radius: 100px;
+		display: inline-block;
+	}
+	p{
+		line-height: 2;
+	}
+	a:hover{
+		color: $accent;
+	}
 }
 
 // user-form
@@ -82,11 +182,7 @@ header {
 		width: 30%;
 	}
 	input[type="submit"]{
-		border-radius: 10px;
-		background-color: #fff;
-		border: 1px solid $accent;
-		padding: 10px;
-		margin: 20px;
+		@include submit-button;
 	}
 }
 
@@ -94,13 +190,56 @@ header {
 
 .post-form{
 	@include left-80;
-	h2,
-	input[type="text"],
-	textarea{
-		margin: 10px;
+	div{
 		width: 60%;
 	}
+	input[type="text"],
 	textarea{
-		height: 200px;
+		margin: 5px;
+		width: 100%;
+		padding: 10px;
+	}
+	textarea{
+		height: 400px;
+	}
+	input[type="submit"]{
+		@include submit-button;
+		margin: 5px 0 0 0;
+	}
+}
+
+// user page
+
+.user-page{
+	@include centered-80;
+	text-align: left;
+	div{
+		float: left;
+		width: 60%;
+	}
+	h3{
+		letter-spacing: 1.2px;
+		font-weight: lighter;
+	}
+	p{
+		line-height: 2;
+	}
+	a:hover{
+		color: $accent;
+	}
+	aside{
+		top: 140px; right: 120px;
+		position: fixed;
+		width: 20%;
+		padding-top: 20px; padding-bottom: 20px;
+		border: 1px solid $accent;
+		text-align: center;
+		ul{
+			list-style: none;
+			padding-left: 0;
+			li{
+				margin: 10px;
+			}
+		}
 	}
 }

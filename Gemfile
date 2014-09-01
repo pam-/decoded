@@ -42,4 +42,6 @@ gem 'devise'
 
 gem 'rename'
 
+gem 'will_paginate', '~> 3.0.7'
 
+gem 'paperclip', '~> 4.2'

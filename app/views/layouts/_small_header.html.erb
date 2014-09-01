@@ -1,0 +1,13 @@
+<nav class="navbar">
+			<h2><%= link_to 'dcd', '/' %> </h2>
+	<ul>
+		<li> <%= link_to 'home', '/' %> </li>
+		<li> <%= link_to 'top 10', '#' %> </li>
+		<% if user_signed_in? %>
+			<li> <%= link_to 'settings', edit_user_registration_path(current_user) %> </li>
+			<li> <%= link_to 'sign out', sign_out_path, method: :delete %> </li>
+			<% else %>
+			<li> <%= link_to 'sign in', sign_in_path %> </li>
+			<% end %>  
+	</ul>
+</nav>

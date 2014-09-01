@@ -8,8 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render 'layouts/header' %>
-
+		<% if current_page?('/') %>
+			<%= render 'layouts/header' %>
+		<% else %>
+			<%= render 'layouts/small_header' %>
+		<% end %>
 	<%= yield %> 
 
 	<%#= render 'footer' %>

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # before_action :authenticate_user!, except: [:index]
 
 	def index
-		@posts = Post.all
+		@posts = Post.all.paginate(page: params[:page], per_page: 8)
 	end
 
   def show
@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
 	def new
 		@post = Post.new
+		@user = current_user
 	end
 
 	def create
@@ -42,6 +43,6 @@ class PostsController < ApplicationController
 	end
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :user_id)
   end
 end

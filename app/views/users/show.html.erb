@@ -1,0 +1,22 @@
+<section class="user-page">
+	<% if @user == current_user %> 
+	<div>
+		<h2> MY POSTS <small> (<%= @user.posts.count %>) </small></h2> 
+		
+		<%= will_paginate @posts %>
+			<% @posts.each do |post| %> 
+				<h3> <%= link_to post.title, post_path(post) %> </h3>
+				<p> <%= truncate(post.body, length: 300) { link_to 'EDIT', edit_post_path(post) } %> </p>
+			<% end %>
+	</div>
+	<aside>
+		<ul> 
+			<li> <%= link_to 'new post', new_post_path %> </li>
+			<li> <%= link_to 'edit account', edit_user_registration_path(current_user) %> </li>
+			<li> <%= link_to 'sign out', sign_out_path %> </li>
+		</ul>
+	</aside>
+	<% else %> 
+		<%= render 'public_view' %>
+	<% end %>
+</section>	

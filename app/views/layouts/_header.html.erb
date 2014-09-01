@@ -1,11 +1,15 @@
 <header> 
+	<div id="white-cloud"> 
+			<p></p>
+		</div>
 	<h1> decoded </h1>
 	<ul>
 
-		<li> <%= link_to 'Home', posts_path %> </li>
+		<li> <%= link_to 'Home', '/' %> </li>
 		<li> <%= link_to 'About', about_path %> </li>
 		<li> <%= link_to 'Top 10', '#' %> </li>
 		<% if user_signed_in? %>
+			<li> <%= link_to 'My Account', current_user %> </li>
 			<li> <%= link_to 'Sign out', sign_out_path, method: :delete %> </li>
 		<% else %> 
 			<li> <%= link_to 'Sign in', sign_in_path %> </li>

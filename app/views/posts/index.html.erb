@@ -1,12 +1,12 @@
 <%#= if user_signed_in? %> 
 
 <section class="post-index">
-    <h3> 
     	<% @posts.each do |post| %>
-    	<%= post.title %> <small> <%= post.created_at %> </small>
-    </h3> 
+    	<%= image_tag post.user.avatar.url(:thumb) %> 
+    	<h4>wrote: </h4>
+    	<h3> <%= link_to post.title, post_path(post) %> <small> | <%= time_ago_in_words(post.created_at) %> ago </small> </h3> 
     <p> 
-    	<%= truncate(post.body, length: 300) %> 
+    	<%= truncate(post.body, length: 400) { link_to 'READ MORE', post_path(post) } %> 
     </p>
     <% end %>
   </div>
